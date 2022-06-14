@@ -38,16 +38,16 @@ script1.MouseButton1Down:connect(function()
 	print('hi')
 end)
 
-script2.Name = "fly"
-script2.Parent = main
-script2.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
-script2.Position = UDim2.new(0.553333342, 0, 0.182051286, 0)
-script2.Size = UDim2.new(0, 292, 0, 300)
-script2.Font = Enum.Font.SourceSans
-script2.Text = "Fly"
-script2.TextColor3 = Color3.fromRGB(0, 0, 0)
-script2.TextSize = 40.000
-script2.MouseButton1Down:connect(function()
+fly.Name = "fly"
+fly.Parent = main
+fly.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+fly.Position = UDim2.new(0.553333342, 0, 0.182051286, 0)
+fly.Size = UDim2.new(0, 292, 0, 300)
+fly.Font = Enum.Font.SourceSans
+fly.Text = "Fly"
+fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+fly.TextSize = 40.000
+fly.MouseButton1Down:connect(function()
 	local Settings = {
 	
 	Speed = 5,
