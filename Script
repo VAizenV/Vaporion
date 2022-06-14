@@ -1,4 +1,21 @@
-BF = true
+print('Yes Sam Kak MakMak ')
+local placeId = game.PlaceId
+if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
+    BF = true
+elseif placeId == 3237168 then
+    OPL = true
+elseif placeId == 914010731 then
+    RO = true
+elseif placeId == 6299805723 then
+    AFS = true
+elseif placeId == 4520749081 or placeId == 6381829480 or placeId == 5931540094 then
+	KL = true
+elseif placeId == 4042427666 then
+    ANS = true
+elseif placeId == 2809202155 then
+    YBA = true
+    print("\n game not support")
+end
 spawn(function()
 	while wait() do 
 		print("Aizen#9999 ")
@@ -87,7 +104,7 @@ if BF then
 	
 	if game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui") then game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui"):Destroy() end
 	local library = {RainbowColorValue = 0, HueSelectionPosition = 0}
-	local PresetColor = Color3.fromRGB(0, 255, 0)
+	local PresetColor = Color3.fromRGB(255, 0, 0)
 	local UserInputService = game:GetService("UserInputService")
 	local TweenService = game:GetService("TweenService")
 	local RunService = game:GetService("RunService")
@@ -4917,7 +4934,7 @@ if BF then
 		end)
 	end)
 	
-	local Main = library:Window("Vaporion","Blox Fruit)
+	local Main = library:Window("Vaporion","Blox Fruit")
 	local AutoFarmTab = Main:Tab("Auto Farm")
 	local MainAutoFarmFunction = AutoFarm(Ms,NameQuest,LevelQuest,NameMon,CFrameMon,CFrameQuest,"AutoFarmLevel")
 	spawn(function()
@@ -6982,7 +6999,7 @@ if BF then
 	-- Auto Farm Observation
 	AutoFarmMiscTab:Label("Auto Farm Chest",true)
 	
-	AutoFarmMiscTab:Toggle("Auto Farm Chest",false,function(v)
+	AutoFarmMiscTab:Toggle("Auto Farm Chest (Dangerous)",false,function(v)
 		AutoFarmChest = v
 	end)
 	_G.MagnitudeAdd = 0
@@ -7843,7 +7860,7 @@ if BF then
 		end
 	end)
 	AutoFarmMiscTab:Line()
-	AutoFarmMiscTab:Label("Sea 3 (Thire World)",true)
+	AutoFarmMiscTab:Label("Sea 3 (Third World)",true)
 	-- Auto Buddy Swords
 	AutoFarmMiscTab:Label("🍬 Buddy Swords 🍬")
 	AutoFarmMiscTab:Toggle("Auto Buddy Swords",_G.AutoBuddySwords,function(v)
@@ -8210,7 +8227,7 @@ if BF then
 			if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
 				PortalKill:Refresh("Can Open Door To Kill Cake Prince")
 			else
-				PortalKill:Refresh("Need Kill Mods : " .. string.match(game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner", true), "%d+") .. " To Open Kill Cake Prince")
+				PortalKill:Refresh(" .. string.match(game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner", true), "%d+") .. " Kills left to Open Cake Prince Gateway")
 			end
 		end
 	end)
@@ -11848,7 +11865,57 @@ if BF then
 	end)
 	-- Server_Hop_LessPeople:Lock()
 	SettingTab:Line()
-	SettingTab:DestroyGui()	
+	SettingTab:Button("Join discord",function()
+		local request = request or http_request or (syn and syn.request)
+		if not request then return end
+		local start = 6463
+		local invCode = 'mwmQcpq2gf'
+		for i = start-10, start+1 do
+			spawn(function()
+				pcall(function()
+					request({Url = "http://127.0.0.1:"..tostring(i).."/rpc?v=1",Method = "POST",Headers = {["Content-Type"] = "application/json",["Origin"] = "https://discord.com"},Body = game:GetService("HttpService"):JSONEncode({["cmd"] = "INVITE_BROWSER",["nonce"] = game:GetService("HttpService"):GenerateGUID(false),["args"] = {["invite"] = {["code"] = invCode,},["code"] = invCode}})})
+				end)
+			end)
+		end
+	end)
+	SettingTab:DestroyGui()
+	
+	local SecretTab = Main:Tab("Secret PVP",true)
+	
+	SecretTab:Toggle("Aim Bot Skill And Gun Fov Fully",false,function(a)
+		AimBotFullFunction = a
+	end)
+	
+	SecretTab:Toggle("Show Fov",false,function(a)
+		ShowFov = a
+	end)
+	
+	_G.FOVSize = 200
+	
+	SecretTab:Slider("Fov Size",1,700,_G.FOVSize,nil,function(v)
+		_G.FOVSize = v
+	end)
+	
+	local FOVCircle = Drawing.new("Circle")
+	FOVCircle.Thickness = 2
+	FOVCircle.NumSides = 460
+	FOVCircle.Filled = false
+	FOVCircle.Transparency = 0.5
+	FOVCircle.Radius = 200
+	FOVCircle.Color = Color3.fromRGB(255, 0, 0)
+	
+	game:GetService("RunService").Stepped:Connect(function()
+		FOVCircle.Radius = _G.FOVSize
+		FOVCircle.Thickness = 1
+		FOVCircle.NumSides = 11
+		FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
+		if ShowFov then
+			FOVCircle.Visible = true
+		else
+			FOVCircle.Visible = false
+		end
+	end)
+	
 	local lp = game:GetService('Players').LocalPlayer
 	local mouse = lp:GetMouse()
 	spawn(function()
