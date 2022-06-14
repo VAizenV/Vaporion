@@ -1,4 +1,3 @@
-print('Yes Sam Kak MakMak ')
 local placeId = game.PlaceId
 if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
     BF = true
@@ -6999,7 +6998,7 @@ if BF then
 	-- Auto Farm Observation
 	AutoFarmMiscTab:Label("Auto Farm Chest",true)
 	
-	AutoFarmMiscTab:Toggle("Auto Farm Chest (Dangerous)",false,function(v)
+	AutoFarmMiscTab:Toggle("Auto Farm Chest",false,function(v)
 		AutoFarmChest = v
 	end)
 	_G.MagnitudeAdd = 0
